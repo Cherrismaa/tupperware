@@ -13,10 +13,14 @@ const Header = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */} 
-          <img
-            src="../../public/logos/header-logo.png" alt="Tupperware Hyderabad"
-            className="w-35 h-24 object-contain mr-3"/>
-
+          <a href="/" className="flex items-center">
+            <img
+              src="/logos/header-logo.png"
+              alt="Tupperware Hyderabad"
+              className="w-35 h-24 object-contain mr-3"
+            />
+            <span className="sr-only">Tupperware Hyderabad</span>
+          </a>
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <a

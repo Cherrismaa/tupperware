@@ -9,10 +9,15 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand Section */}
           <div className="space-y-6">
-            {/* Logo */} 
+          {/* Logo */} 
+          <a href="/" className="flex items-center">
             <img
-            src="../../public/logos/footer-logo.png" alt="Tupperware Hyderabad"
-            className="w-30 h-20 object-contain mr-3"/>
+              src="/logos/footer-logo.png"
+              alt="Tupperware Hyderabad"
+              className="w-30 h-16 object-contain mr-3"
+            />
+            <span className="sr-only">Tupperware Hyderabad</span>
+          </a>
 
             <p className="text-background/80 leading-relaxed">
               Premium kitchen solutions designed for life and kept for generations. 
