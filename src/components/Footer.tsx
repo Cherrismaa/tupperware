@@ -9,15 +9,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand Section */}
           <div className="space-y-6">
-            <div className="flex items-center">
-              <div className="w-12 h-12 bg-gradient-to-br from-primary to-primary-light rounded-xl flex items-center justify-center mr-4">
-                <span className="text-primary-foreground font-bold text-xl">T</span>
-              </div>
-              <div>
-                <h3 className="font-heading font-bold text-xl">Tupperware</h3>
-                <p className="text-sm text-background/70">Hyderabad</p>
-              </div>
-            </div>
+            {/* Logo */} 
+            <img
+            src="../../public/logos/footer-logo.png" alt="Tupperware Hyderabad"
+            className="w-30 h-20 object-contain mr-3"/>
+
             <p className="text-background/80 leading-relaxed">
               Premium kitchen solutions designed for life and kept for generations. 
               Experience the difference with Tupperware's innovative, durable, and eco-friendly products.
@@ -49,14 +45,14 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-primary flex-shrink-0" />
                 <div>
-                  <p className="font-medium">+91 832 866 8046</p>
+                  <p className="font-medium">+91 891 935 7003</p>
                   <p className="text-background/70 text-sm">Mon-Sun, 10AM-8PM</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-primary flex-shrink-0" />
                 <div>
-                  <p className="font-medium">enagickangen.co.in@gmail.com</p>
+                  <p className="font-medium">contacttupperwarehyd@gmail.com</p>
                   <p className="text-background/70 text-sm">We'll respond within 24hrs</p>
                 </div>
               </div>

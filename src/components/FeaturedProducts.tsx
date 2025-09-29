@@ -1,34 +1,80 @@
-import productStorage from '@/assets/product-storage-set.jpg';
-import productBottles from '@/assets/product-bottles.jpg';
-import productUtensils from '@/assets/product-utensils.jpg';
+import React from 'react';
+import chopper from '@/assets/chopper.jpeg';
+import knife from '@/assets/knifes.jpeg';
+import saver from '@/assets/saver.jpeg';
+import spiceshakers from '@/assets/spice-shakers.jpeg';
+import flask from '@/assets/steel-flask.jpeg';
+import storer from '@/assets/super-storer.jpeg';
+import tumbler from '@/assets/tumblers-bottles.jpeg';
+import ricesmart from '@/assets/umami-ricesmart.jpeg';
 import { ShoppingCart, Eye } from 'lucide-react';
 
-const FeaturedProducts = () => {
-  const products = [
+type Product = {
+  id: number;
+  name: string;
+  image: string;
+  description: string;
+  badge?: string;
+};
+
+const FeaturedProducts: React.FC = () => {
+  const products: Product[] = [
     {
       id: 1,
-      name: 'Premium Storage Set',
-      price: '₹2,999',
-      image: productStorage,
-      description: 'Complete food storage solution with airtight seals',
-      badge: 'Bestseller'
+      name: 'Chopper and Spoons',
+      image: chopper,
+      description: 'Handy Chopper and Spoons for your kitchen needs',
+      badge: 'Bestseller',
     },
     {
       id: 2,
-      name: 'Eco Water Bottles',
-      price: '₹1,499',
-      image: productBottles,
-      description: 'BPA-free bottles in beautiful pastel colors',
-      badge: 'New'
+      name: 'Knife Set with Sharpener',
+      image: knife,
+      description: 'Premium Knives for precision cutting and slicing with sharpener',
+      badge: 'New',
     },
     {
       id: 3,
-      name: 'Kitchen Utensil Set',
-      price: '₹1,799',
-      image: productUtensils,
-      description: 'Essential tools for your modern kitchen',
-      badge: 'Popular'
-    }
+      name: 'Dry Storage Set',
+      image: saver,
+      description: 'Compact and stackable containers for dry food and groceries storage',
+      badge: 'Popular',
+    },
+    {
+      id: 4,
+      name: 'Spice Shakers and Oil Canisters',
+      image: spiceshakers,
+      description: 'Elegant spice shakers and oil canisters for your kitchen',
+      badge: 'Popular',
+    },
+    {
+      id: 5,
+      name: 'Stainless Steel Insulated Flask',
+      image: flask,
+      description: 'Vacuum-insulated flask for keeping beverages hot or cold',
+      badge: 'Popular',
+    },
+    {
+      id: 6,
+      name: 'Bottles and Tumblers',
+      image: tumbler,
+      description: 'BPA-free bottles in beautiful pastel colors',
+      badge: 'Popular',
+    },
+    {
+      id: 7,
+      name: 'Air Tight Containers and Rice Storer',
+      image: ricesmart,
+      description: 'Complete food storage solution with airtight seals',
+      badge: 'Popular',
+    },
+    {
+      id: 8,
+      name: 'Super Storer and Rice Keeper',
+      image: storer,
+      description: 'Keep your rice fresh and free from pests with our airtight rice keeper',
+      badge: 'Popular',
+    },
   ];
 
   return (
@@ -39,14 +85,14 @@ const FeaturedProducts = () => {
             Featured <span className="text-primary">Products</span>
           </h2>
           <p className="text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
-            Discover our most popular products, carefully selected for their quality, 
+            Discover our most popular products, carefully selected for their quality,
             design, and functionality to enhance your kitchen experience.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product) => (
-            <div key={product.id} className="card-premium group">
+            <article key={product.id} className="card-premium group">
               <div className="relative overflow-hidden rounded-xl mb-6">
                 {product.badge && (
                   <div className="absolute top-4 left-4 z-10">
@@ -55,44 +101,49 @@ const FeaturedProducts = () => {
                     </span>
                   </div>
                 )}
+
                 <img
                   src={product.image}
                   alt={product.name}
                   className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
               </div>
-              
+
               <div className="space-y-4">
                 <div>
                   <h3 className="text-xl font-bold font-heading text-foreground mb-2">
                     {product.name}
                   </h3>
-                  <p className="text-muted-foreground text-sm mb-3">
-                    {product.description}
-                  </p>
-                  <div className="text-2xl font-bold text-primary">
-                    {product.price}
-                  </div>
+                  <p className="text-muted-foreground text-sm mb-3">{product.description}</p>
                 </div>
-                
+
                 <div className="flex gap-3 pt-4">
-                  <button className="flex-1 btn-hero flex items-center justify-center gap-2 py-3">
+                  <button
+                    type="button"
+                    className="flex-1 btn-hero flex items-center justify-center gap-2 py-3"
+                    aria-label={`Add ${product.name} to cart`}
+                  >
                     <ShoppingCart size={18} />
                     Add to Cart
                   </button>
-                  <button className="btn-secondary px-4 py-3 flex items-center justify-center">
+
+                  <button
+                    type="button"
+                    className="btn-secondary px-4 py-3 flex items-center justify-center"
+                    aria-label={`View ${product.name}`}
+                  >
                     <Eye size={18} />
                   </button>
                 </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
 
         <div className="text-center mt-12">
-          <button className="btn-secondary">
+          <button type="button" className="btn-secondary">
             View All Products
           </button>
         </div>

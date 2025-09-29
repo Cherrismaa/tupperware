@@ -12,54 +12,45 @@ const Header = () => {
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */} {/*
-          <div className="flex-shrink-0">
-            <div className="flex items-center">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-primary-light rounded-lg flex items-center justify-center mr-3">
-                <span className="text-primary-foreground font-bold text-lg">T</span>
-              </div>
-              <div>
-                <h1 className="font-heading font-bold text-xl text-foreground">Tupperware</h1>
-                <p className="text-xs text-muted-foreground">Hyderabad</p>
-              </div>
-            </div>
-          </div> */}
-
-          
+          {/* Logo */} 
+          <img
+            src="../../public/logos/header-logo.png" alt="Tupperware Hyderabad"
+            className="w-35 h-24 object-contain mr-3"/>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex items-center space-x-8">
             <a
               href="#home"
-              className="text-foreground hover:text-primary transition-colors duration-300 font-medium"
+              className="text-foreground hover:text-primary transition-colors duration-300 font-bold text-base md:text-lg"
             >
               Home
             </a>
             <a
               href="#products"
-              className="text-foreground hover:text-primary transition-colors duration-300 font-medium"
+              className="text-foreground hover:text-primary transition-colors duration-300 font-bold text-base md:text-lg"
             >
               Products
             </a>
             <a
               href="#about"
-              className="text-foreground hover:text-primary transition-colors duration-300 font-medium"
+              className="text-foreground hover:text-primary transition-colors duration-300 font-bold text-base md:text-lg"
             >
               About Us
             </a>
             <a
               href="#contact"
-              className="text-foreground hover:text-primary transition-colors duration-300 font-medium"
+              className="text-foreground hover:text-primary transition-colors duration-300 font-bold text-base md:text-lg"
             >
               Contact
             </a>
             <a
               href="#shop"
-              className="btn-accent"
+              className="px-4 py-2 rounded-lg font-bold text-base md:text-lg text-white bg-pink-500 hover:bg-pink-600 transition-colors duration-300"
             >
               Shop
             </a>
           </nav>
+
 
           {/* Mobile menu button */}
           <div className="md:hidden">
@@ -76,7 +67,7 @@ const Header = () => {
         {/* Mobile Navigation */}
         <div
           className={`md:hidden transition-all duration-300 ease-in-out ${
-            isMenuOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
+            isMenuOpen ? 'max-h-68 opacity-100' : 'max-h-0 opacity-0'
           } overflow-hidden`}
         >
           <nav className="py-4 space-y-4">
@@ -110,7 +101,7 @@ const Header = () => {
             </a>
             <a
               href="#shop"
-              className="block btn-accent inline-block mt-4"
+              className="block px-4 py-2 rounded-lg font-bold text-base text-white bg-pink-500 hover:bg-pink-600 transition-colors duration-300 text-center"
               onClick={() => setIsMenuOpen(false)}
             >
               Shop
