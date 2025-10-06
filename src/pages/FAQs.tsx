@@ -119,8 +119,7 @@ const FAQs = () => {
           <div className="mt-16 text-center p-8 bg-muted/30 rounded-lg animate-fade-in">
             <h2 className="text-2xl font-bold mb-4">Still have questions?</h2>
             <p className="text-muted-foreground mb-6">
-              We're here to help! Reach out to us and we'll get back to you as
-              soon as possible.
+              Reach out to Tupperware Hyderabad for product details, warranty, and support. Reach out to us and we'll get back to you as soon as possible.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
